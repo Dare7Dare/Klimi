@@ -1,0 +1,118 @@
+.header {
+    width: 100%;
+    padding: 15px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    img {
+        height: 40px;
+    }
+
+    
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vh;
+        height: 100vh;
+        opacity: 0.95;
+        visibility: hidden;
+        z-index: 5;
+    }
+
+        nav.open {
+            visibility: visible;
+        }
+
+        .menu-nav {
+            display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+            flex-flow: column wrap;
+            height: 100vh;
+            width: 50vh;
+            overflow: hidden;
+            background: black;
+            list-style: none;
+            padding-right: 1rem;
+            transform: translateX(100%);
+        }
+
+            nav.open {
+                transform: translateX(0);
+            }
+
+            .menu-nav-item {
+                font-size: 1rem;
+                padding: 1.5rem 0;
+            }
+
+                button {
+                    background: transparent;
+                    border: none;
+                    /* color: white; */
+                }
+
+                .get-started {
+                    background: green;
+                    border-radius: 5px;
+                    color: white;
+                    padding: 10px 20px;
+                }
+
+    .hamburger-menu {
+        display: none;
+        position: absolute;
+        z-index: 9;
+        right: 20px;
+        top: 22px;
+        height: 20px;
+        width: 28px;
+        cursor: pointer;
+    }
+    
+        .hamburger-menu-button {
+            position: absolute;
+            right: 0;
+            top: .5rem;
+            width: 28px;
+            height: 3px;
+            background: black;
+        }
+    
+            .hamburger-menu-button::before {
+                content: '';
+                position: absolute;
+                top: -8px;
+                width: 28px;
+                height: 3px;
+                background: black;
+                
+            }
+    
+            .hamburger-menu-button::after {
+                content: '';
+                position: absolute;
+                top: 8px;
+                width: 28px;
+                height: 3px;
+                background: black;
+                
+            }
+    
+            .hamburger-menu-button.open {
+                transform: rotate(720deg);
+                background: transparent;
+            }
+                .hamburger-menu-button::before {
+                    transform: rotate(45deg) translate(5px, 8px);
+                    background: white;
+                }
+                .hamburger-menu-button::after {
+                    transform: rotate(-45deg) translate(3px, -7px);
+                    background: white;
+                }
