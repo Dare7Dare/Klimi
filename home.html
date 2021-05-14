@@ -11,9 +11,9 @@
 <body>
     
     <header>
-        <img src="" alt="">
-
-        <nav class="nav-desktop">
+        <img src="./images/logo.jpg" alt="Logo">
+        <hamburger-menu></hamburger-menu>
+        <!-- <nav class="nav-desktop">
             <ul>
                 <li>
                     <a href="">ПОЧЕТНА</a>
@@ -21,9 +21,9 @@
                     <a href="">КОНТАКТ</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
 
-        <div class="hamburger-menu">
+        <!-- <div class="hamburger-menu">
             <span class="hamburger-menu-button">
 
             </span>
@@ -41,8 +41,52 @@
                     <button class="get-started">Get Started&nbsp;&nbsp;<i class="fas fa-angle-right"></i></button>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
     </header>
 
+    <section class="lista-na-klimi">
+
+        <klima-item title="FUJITSU KLIMA" price="42 000 MKD" brand="FUJITSU" image="./images/klima1.jpg"></klima-item>
+        <klima-item title="FUJITSU KLIMA" price="42 000 MKD" brand="FUJITSU" image="./images/klima1.jpg"></klima-item>
+        <klima-item title="FUJITSU KLIMA" price="42 000 MKD" brand="FUJITSU" image="./images/klima1.jpg"></klima-item>
+
+    </section>
+
+
+    <script src="./js/KlimaItem.js"></script>
+    <script src="./js/HamburgerMenu.js"></script>
+
+    <script>
+        const menuBtn = document.querySelector('.hamburger-menu');
+        const hamburger = document.querySelector('.hamburger-menu-button');
+        const nav = document.querySelector('.nav');
+        const menuNav = document.querySelector('.menu-nav');
+        const navItems = document.querySelectorAll('.menu-nav-item');
+        
+        let showMenu = false;
+        
+        menuBtn.addEventListener('click', toggleMenu);
+        
+        
+        function toggleMenu() {
+            if (!showMenu) {
+                hamburger.classList.add('open');
+                nav.classList.add('open');
+                menuNav.classList.add('open');
+                navItems.forEach(item => item.classList.add('open'));
+        
+        
+                showMenu = true;
+            }
+            else {
+                hamburger.classList.remove('open');
+                nav.classList.remove('open');
+                menuNav.classList.remove('open');
+                navItems.forEach(item => item.classList.remove('open'));
+        
+                showMenu = false;
+            }
+        }
+        </script>
 </body>
 </html>
